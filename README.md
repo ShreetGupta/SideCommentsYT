@@ -31,6 +31,12 @@ To disable: use the toggle on the extension card in `chrome://extensions`
 
 ---
 
+## Important note
+
+👉 Sideloaded extensions require the files to be remain at the same path, So don't delete the folder after loading the extension or extension will get removed.
+
+---
+
 ## How It Works
 
 The extension injects a content script into YouTube that listens for the `yt-navigate-finish` event to detect navigation, then uses a two-tier system to detect when comments are ready:
