@@ -4,7 +4,7 @@
 
 A Chrome extension that moves the comments section into the right sidebar — so you never have to scroll past the video to see what people are saying.
 
-![Side Comments](icons/icon128.png)
+<img src="icons/icon128.png" align="right" width="128" height="128" />
 
 ---
 
@@ -28,12 +28,6 @@ A Chrome extension that moves the comments section into the right sidebar — so
 5. Navigate to any YouTube video — the layout activates automatically
 
 To disable: use the toggle on the extension card in `chrome://extensions`
-
----
-
-## Important note
-
-👉 Sideloaded extensions require the files to be remain at the same path, So don't delete the folder after loading the extension or extension will get removed.
 
 ---
 

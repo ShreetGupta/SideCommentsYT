@@ -1,5 +1,5 @@
 /*
- * Side Comments v5
+ * Side Comments
  * - Comments panel in right sidebar
  * - Playlist collapses on load, user can expand freely
  */
@@ -34,24 +34,16 @@ function forceCommentsLoad() {
   });
 }
 
-/* ── Collapse playlist once on load ──────────────────
-   Watch for ytd-playlist-panel-renderer to appear, then
-   immediately stamp collapsed="" on it before YouTube
-   renders it open. We only do this once per navigation —
-   after that the user can expand/collapse freely.
-──────────────────────────────────────────────────────── */
 function collapseOnce(pl) {
-  if (pl.hasAttribute('collapsed')) return; // already collapsed
+  if (pl.hasAttribute('collapsed')) return;
   pl.setAttribute('collapsed', '');
   try { pl.collapsed = true; } catch(e) {}
 }
 
 function watchAndCollapsePlaylist() {
   const existing = document.querySelector('ytd-playlist-panel-renderer');
-  if (existing) {
-    collapseOnce(existing);
-    return;
-  }
+  if (existing) { collapseOnce(existing); return; }
+
   playlistObs = new MutationObserver((mutations) => {
     for (const m of mutations) {
       for (const node of m.addedNodes) {
@@ -71,12 +63,9 @@ function watchAndCollapsePlaylist() {
   playlistObs.observe(document.body, { childList: true, subtree: true });
 }
 
-/* ── Detection ─────────────────────────────────────── */
 function detect() {
   if (!isWatch()) return;
-
   watchAndCollapsePlaylist();
-
   if (tryActivate()) return;
 
   const c = document.getElementById('comments');
@@ -113,7 +102,6 @@ function tryActivate() {
   return true;
 }
 
-/* ── Activate layout ───────────────────────────────── */
 function activate() {
   const comments = document.getElementById('comments');
   const secInner = document.querySelector('#secondary-inner');
@@ -121,19 +109,14 @@ function activate() {
   if (!comments || !secInner || !columns) return;
 
   document.documentElement.classList.add('sc-active');
-  columns.setAttribute('data-sc', '1');
-
   secInner.prepend(comments);
   comments.classList.add('sc-comments');
-
   nudge();
 }
 
-/* ── Navigation ────────────────────────────────────── */
 document.addEventListener('yt-navigate-finish', () => {
   if (!isWatch()) {
     document.documentElement.classList.remove('sc-active');
-    document.querySelector('#columns')?.removeAttribute('data-sc');
     document.getElementById('comments')?.classList.remove('sc-comments');
     cleanup();
     return;
@@ -142,14 +125,12 @@ document.addEventListener('yt-navigate-finish', () => {
   detect();
 });
 
-/* ── Initial load ───────────────────────────────────── */
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => { if (isWatch()) detect(); });
 } else if (isWatch()) {
   detect();
 }
 
-/* ── Nudge ──────────────────────────────────────────── */
 function nudge() {
   clearInterval(nudgeTmr);
   const sec = document.querySelector('#secondary');
@@ -159,5 +140,5 @@ function nudge() {
   };
   fire();
   let t = 0;
-  nudgeTmr = setInterval(() => { fire(); if (++t >= 16) clearInterval(nudgeTmr); }, 500);
+  nudgeTmr = setInterval(() => { fire(); if (++t >= 8) clearInterval(nudgeTmr); }, 500);
 }

@@ -1,26 +1,34 @@
 {
   "manifest_version": 3,
   "name": "Side Comments",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Watch YouTube videos and read comments at the same time.",
-  "host_permissions": ["*://www.youtube.com/*"],
+  "host_permissions": [
+    "*://www.youtube.com/*"
+  ],
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/*"],
-      "js": ["content.js"],
-      "css": ["content.css"]
+      "matches": [
+        "*://www.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
     }
   ],
   "action": {
     "default_icon": {
-      "16":  "icons/icon16.png",
-      "48":  "icons/icon48.png",
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     }
   },
   "icons": {
-    "16":  "icons/icon16.png",
-    "48":  "icons/icon48.png",
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   }
 }

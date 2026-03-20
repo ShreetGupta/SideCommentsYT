@@ -32,12 +32,9 @@
 /* ── Secondary: sticky, viewport height, scrollable ── */
 .sc-active #secondary {
   flex           : 0 0 var(--sc-w) !important;
-  width          : var(--sc-w) !important;
-  max-width      : var(--sc-w) !important;
   position       : sticky !important;
   top            : var(--sc-top) !important;
   height         : calc(100vh - var(--sc-top)) !important;
-  max-height     : calc(100vh - var(--sc-top)) !important;
   overflow-y     : auto !important;
   overflow-x     : hidden !important;
   scrollbar-width: thin !important;
