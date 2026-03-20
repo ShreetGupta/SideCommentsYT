@@ -4,23 +4,20 @@
   <img src="icons/icon128.png" width="120" />
 </p>
 
-
 **Watch YouTube videos and read comments at the same time.**
 
 A Chrome extension that moves the comments section into the right sidebar — so you never have to scroll past the video to see what people are saying.
-
-<img src="icons/icon128.png" align="right" width="128" height="128" />
 
 ---
 
 ## Features
 
-- 📌 **Comments in sidebar** — fixed-height panel on the right, scrollable independently
-- 🎵 **Playlist stays collapsed** — auto-collapses on load, expand freely anytime
-- ⚡ **Instant loading** — comments appear without you having to scroll down
-- 🎬 **More Videos below** — recommendations render natively beneath the comments
-- 🌙 **Dark & light mode** — fully adapts to YouTube's theme
-- 🔄 **SPA-aware** — works seamlessly when clicking between videos
+* 📌 **Comments in sidebar** — fixed-height panel on the right, scrollable independently
+* 🎵 **Playlist stays collapsed** — auto-collapses on load, expand freely anytime
+* ⚡ **Instant loading** — comments appear without you having to scroll down
+* 🎬 **More Videos below** — recommendations render natively beneath the comments
+* 🌙 **Dark & light mode** — fully adapts to YouTube's theme
+* 🔄 **SPA-aware** — works seamlessly when clicking between videos
 
 ---
 
@@ -40,8 +37,8 @@ To disable: use the toggle on the extension card in `chrome://extensions`
 
 The extension injects a content script into YouTube that listens for the `yt-navigate-finish` event to detect navigation, then uses a two-tier system to detect when comments are ready:
 
-- **Tier 1** — `MutationObserver` watching for the `hidden` attribute to be removed from `#comments`
-- **Tier 2** — A periodic interval fallback (every 500ms, up to 30 seconds)
+* **Tier 1** — `MutationObserver` watching for the `hidden` attribute to be removed from `#comments`
+* **Tier 2** — A periodic interval fallback (every 500ms, up to 30 seconds)
 
 Once comments are ready, they get prepended into `#secondary-inner` and the CSS layout activates.
 
@@ -68,19 +65,19 @@ function areCommentsReady() {
 document.addEventListener('yt-navigate-finish', onNavigate);
 ```
 
-- Use `getElementById('comments')` not `querySelector('ytd-comments#comments')`
-- `innerHTML.length > 100` ensures comments are actually loaded, not just present in DOM
-- `cleanup()` should only disconnect observers — never touch the DOM during navigation
-- `yt-navigate-finish` is sufficient — no background scripts or extra permissions needed
-- YouTube updates `#comments` in-place, so you never need to move it back on navigation
+* Use `getElementById('comments')` not `querySelector('ytd-comments#comments')`
+* `innerHTML.length > 100` ensures comments are actually loaded, not just present in DOM
+* `cleanup()` should only disconnect observers — never touch the DOM during navigation
+* `yt-navigate-finish` is sufficient — no background scripts or extra permissions needed
+* YouTube updates `#comments` in-place, so you never need to move it back on navigation
 
 ### Check out Sidesy
 
 Sidesy is more full-featured — toggle button, keyboard shortcut, scroll position preservation, and a polished popup. If you want those features, use Sidesy:
 
-- **GitHub**: https://github.com/abinjohn123/sidesy
-- **Chrome Web Store**: https://chromewebstore.google.com/detail/mlceikceecooilkgiikkopipedhjjech
-- **Developer**: [@abinjohn123](https://github.com/abinjohn123)
+* **GitHub**: [https://github.com/abinjohn123/sidesy](https://github.com/abinjohn123/sidesy)
+* **Chrome Web Store**: [https://chromewebstore.google.com/detail/mlceikceecooilkgiikkopipedhjjech](https://chromewebstore.google.com/detail/mlceikceecooilkgiikkopipedhjjech)
+* **Developer**: [@abinjohn123](https://github.com/abinjohn123)
 
 ---
 
