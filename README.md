@@ -1,6 +1,21 @@
 # Side Comments
 
-<img src="icons/icon128.png" width="72" style="float:right; margin-left:16px; margin-top:4px;" />
+<table>
+<tr>
+<td>
+
+# Side Comments
+
+**Watch YouTube videos and read comments at the same time.**
+
+A Chrome extension that moves the comments section into the right sidebar — so you never have to scroll past the video to see what people are saying.
+
+</td>
+<td align="right">
+<img src="icons/icon128.png" width="80" />
+</td>
+</tr>
+</table>
 
 **Watch YouTube videos and read comments at the same time.**
 
@@ -28,6 +43,12 @@ A Chrome extension that moves the comments section into the right sidebar — so
 5. Navigate to any YouTube video — the layout activates automatically
 
 To disable: use the toggle on the extension card in `chrome://extensions`
+
+---
+
+## Important note
+
+👉 Sideloaded extensions require the files to be remain at the same path, So don't delete the folder after loading the extension or extension will get removed.
 
 ---
 
