@@ -1,21 +1,13 @@
 # Side Comments
 
-<table>
-<tr>
-<td>
-
-# Side Comments
+<h1>
+  Side Comments
+  <img src="icons/icon128.png" width="64" style="float:right; margin-top:-8px;" />
+</h1>
 
 **Watch YouTube videos and read comments at the same time.**
 
 A Chrome extension that moves the comments section into the right sidebar — so you never have to scroll past the video to see what people are saying.
-
-</td>
-<td align="right">
-<img src="icons/icon128.png" width="80" />
-</td>
-</tr>
-</table>
 
 **Watch YouTube videos and read comments at the same time.**
 
