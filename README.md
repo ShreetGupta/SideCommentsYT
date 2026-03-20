@@ -4,7 +4,7 @@
 
 A Chrome extension that moves the comments section into the right sidebar — so you never have to scroll past the video to see what people are saying.
 
-<img src="icons/icon128.png" align="right" width="128" height="128" />
+![Side Comments](icons/icon128.png)
 
 ---
 
