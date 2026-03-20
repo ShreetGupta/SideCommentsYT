@@ -1,8 +1,6 @@
 # Side Comments
 
-<p align="right">
-  <img src="icons/icon128.png" width="120" />
-</p>
+<img src="icons/icon128.png" width="72" style="float:right; margin-left:16px; margin-top:4px;" />
 
 **Watch YouTube videos and read comments at the same time.**
 
